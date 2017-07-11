@@ -7,7 +7,7 @@ RUN mkdir -p /run/nginx /var/log/nginx
 RUN rm /etc/nginx/conf.d/default.conf
 RUN ln -s /app/nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+EXPOSE 80 81
 
 CMD /usr/sbin/nginx && tail -F /var/log/nginx/nginx.log
 # Run via:
