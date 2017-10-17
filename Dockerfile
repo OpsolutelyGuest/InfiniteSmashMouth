@@ -7,8 +7,8 @@ RUN mkdir -p /run/nginx /var/log/nginx
 RUN rm /etc/nginx/conf.d/default.conf
 RUN ln -s /app/nginx.conf /etc/nginx/conf.d/default.conf
 
+COPY . /app
+
 EXPOSE 9030 9031
 
 CMD /usr/sbin/nginx && tail -F /var/log/nginx/nginx.log
-# Run via:
-#   docker run -it -v $(PWD):/app
